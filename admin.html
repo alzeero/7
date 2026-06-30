@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوحة التحكم | Seven Store</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1a3bcc" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>:root{--blue-900:#0d1f6e;--blue-800:#1a3bcc;--blue-700:#2347e0;--blue-600:#3358f4;--blue-500:#4a6cf7;--blue-100:#e8edff;--blue-50:#f0f3ff;--bg:#EEF4FF;--bg-soft:#f0f2f8;--white:#ffffff;--text-900:#0f172a;--text-600:#475569;--text-400:#94a3b8;--border:#e2e8f0;--shadow-sm:0 1px 3px rgba(26,59,204,.08);--shadow-md:0 4px 24px rgba(26,59,204,.12);--radius-sm:10px;--radius-md:16px;--radius-lg:24px;--transition:.25s ease;--font-ar:'Cairo',sans-serif}[data-theme="dark"]{--bg:#0a0f1e;--bg-soft:#111827;--white:#1e293b;--text-900:#f1f5f9;--text-600:#94a3b8;--text-400:#64748b;--border:#1e293b}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--font-ar);background:var(--bg);color:var(--text-900);min-height:100vh;line-height:1.6}button{cursor:pointer;border:none;background:none;font-family:inherit}input,select{font-family:inherit}#login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.login-card{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:40px 32px;max-width:400px;width:100%}.login-card img{height:56px;margin:0 auto 20px;display:block}.login-card h1{font-size:1.3rem;font-weight:800;text-align:center;margin-bottom:24px}.login-card .form-group{margin-bottom:16px}.login-card label{display:block;font-size:.85rem;font-weight:700;margin-bottom:6px;color:var(--text-600)}.login-card input{width:100%;padding:12px 14px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:.95rem;color:var(--text-900);outline:none;transition:border-color var(--transition)}.login-card input:focus{border-color:var(--blue-500)}.login-error{color:#dc2626;font-size:.85rem;margin-bottom:12px;display:none;text-align:center}.btn-login{width:100%;padding:13px;background:linear-gradient(135deg,var(--blue-700),var(--blue-500));color:#fff;border-radius:var(--radius-sm);font-weight:700;font-size:.95rem;margin-top:8px}.btn-login:disabled{opacity:.6}#admin-shell{display:none}.admin-topbar{background:var(--white);border-bottom:1px solid var(--border);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}.admin-topbar .brand{display:flex;align-items:center;gap:10px;font-weight:800}.admin-topbar .brand img{height:34px}.btn-logout{font-size:.85rem;font-weight:700;color:var(--text-600);padding:8px 16px;border-radius:99px;border:1.5px solid var(--border);transition:all var(--transition)}.btn-logout:hover{border-color:#dc2626;color:#dc2626}.admin-main{max-width:1320px;margin:0 auto;padding:28px 20px 60px}.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:24px}.stat-card{background:var(--white);border-radius:var(--radius-md);padding:18px;box-shadow:var(--shadow-sm)}.stat-card .stat-label{font-size:.8rem;color:var(--text-400);margin-bottom:6px}.stat-card .stat-value{font-size:1.5rem;font-weight:800}.toolbar{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px;align-items:center}.toolbar input,.toolbar select{padding:10px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--white);font-size:.9rem;color:var(--text-900)}.toolbar input{flex:1;min-width:200px}.btn-refresh{padding:10px 16px;border-radius:var(--radius-sm);background:var(--bg-soft);color:var(--text-600);font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:6px}.btn-refresh:hover{background:var(--blue-700);color:#fff}.orders-table-wrap{background:var(--white);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:880px}th{text-align:right;padding:14px 16px;background:var(--bg-soft);font-weight:700;color:var(--text-600);white-space:nowrap;font-size:.8rem}td{padding:14px 16px;border-bottom:1px solid var(--border);vertical-align:top}tr:last-child td{border-bottom:none}tr.order-row{cursor:pointer;transition:background var(--transition)}tr.order-row:hover{background:var(--bg-soft)}.order-num{font-weight:700;direction:ltr;display:inline-block}.status-badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.75rem;font-weight:700}.status-pending{background:#fef3c7;color:#92400e}.status-confirmed{background:#dbeafe;color:#1e40af}.status-completed{background:#dcfce7;color:#166534}.status-cancelled{background:#fee2e2;color:#991b1b}[data-theme="dark"] .status-pending{background:rgba(146,64,14,.25);color:#fcd34d}[data-theme="dark"] .status-confirmed{background:rgba(30,64,175,.25);color:#93c5fd}[data-theme="dark"] .status-completed{background:rgba(22,101,52,.25);color:#86efac}[data-theme="dark"] .status-cancelled{background:rgba(153,27,27,.25);color:#fca5a5}.empty-row td{text-align:center;padding:48px;color:var(--text-400)}#order-modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:9000;display:none;align-items:center;justify-content:center;padding:20px}#order-modal-overlay.open{display:flex}#order-modal-box{background:var(--white);border-radius:var(--radius-lg);max-width:560px;width:100%;max-height:85vh;overflow-y:auto;padding:28px}#order-modal-box h2{font-size:1.2rem;font-weight:800;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center}.detail-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:.9rem}.detail-row .k{color:var(--text-400);flex-shrink:0}.detail-row .v{font-weight:600;text-align:left}.detail-items{margin-top:14px}.detail-item-row{display:flex;justify-content:space-between;font-size:.85rem;padding:8px 0;border-bottom:1px dashed var(--border)}.status-select{width:100%;padding:10px;border-radius:var(--radius-sm);border:1.5px solid var(--border);margin-top:14px;font-size:.9rem}.btn-close-modal{width:32px;height:32px;border-radius:50%;background:var(--bg-soft);display:flex;align-items:center;justify-content:center}@media(max-width:640px){.admin-main{padding:20px 12px 40px}}</style>
+</head>
+<body>
+
+<div id="login-screen">
+  <div class="login-card">
+    <img src="assets/images/logo-512.webp" alt="Seven Store" onerror="this.src='assets/images/logo-512.jpg'" />
+    <h1>لوحة تحكم Seven Store</h1>
+    <div class="login-error" id="login-error">بيانات الدخول غير صحيحة</div>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="admin-email">البريد الإلكتروني</label>
+        <input type="email" id="admin-email" autocomplete="username" required />
+      </div>
+      <div class="form-group">
+        <label for="admin-password">كلمة المرور</label>
+        <input type="password" id="admin-password" autocomplete="current-password" required />
+      </div>
+      <button type="submit" class="btn-login" id="login-btn">تسجيل الدخول</button>
+    </form>
+  </div>
+</div>
+
+<div id="admin-shell">
+  <div class="admin-topbar">
+    <div class="brand">
+      <img src="assets/images/logo-512.webp" alt="Seven Store" onerror="this.src='assets/images/logo-512.jpg'" />
+      <span>لوحة التحكم</span>
+    </div>
+    <button class="btn-logout" id="logout-btn"><i class="fas fa-arrow-right-from-bracket"></i> تسجيل الخروج</button>
+  </div>
+
+  <div class="admin-main">
+    <div class="stats-row" id="stats-row">
+      <div class="stat-card"><div class="stat-label">إجمالي الطلبات</div><div class="stat-value" id="stat-total">0</div></div>
+      <div class="stat-card"><div class="stat-label">قيد الانتظار</div><div class="stat-value" id="stat-pending">0</div></div>
+      <div class="stat-card"><div class="stat-label">مكتملة</div><div class="stat-value" id="stat-completed">0</div></div>
+      <div class="stat-card"><div class="stat-label">إجمالي المبيعات</div><div class="stat-value" id="stat-revenue">0 ر.س</div></div>
+    </div>
+
+    <div class="toolbar">
+      <input type="text" id="search-orders" placeholder="بحث برقم الطلب، الاسم أو الجوال..." />
+      <select id="filter-status">
+        <option value="">كل الحالات</option>
+        <option value="pending">قيد الانتظار</option>
+        <option value="confirmed">مؤكد</option>
+        <option value="completed">مكتمل</option>
+        <option value="cancelled">ملغي</option>
+      </select>
+      <button class="btn-refresh" id="refresh-btn"><i class="fas fa-rotate"></i> تحديث</button>
+    </div>
+
+    <div class="orders-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>رقم الطلب</th>
+            <th>العميل</th>
+            <th>الجوال</th>
+            <th>المنتجات</th>
+            <th>الإجمالي</th>
+            <th>الدفع</th>
+            <th>الحالة</th>
+            <th>التاريخ</th>
+          </tr>
+        </thead>
+        <tbody id="orders-tbody">
+          <tr class="empty-row"><td colspan="8"><i class="fas fa-spinner fa-spin"></i> جاري التحميل...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="order-modal-overlay">
+  <div id="order-modal-box">
+    <h2>
+      <span id="modal-order-num"></span>
+      <button class="btn-close-modal" id="order-modal-close"><i class="fas fa-times"></i></button>
+    </h2>
+    <div id="order-modal-body"></div>
+  </div>
+</div>
+
+<script src="assets/js/supabase-client.js"></script>
+<script>function escapeHtml(value) { if (value === null || value === undefined) return ''; return String(value) .replace(/&/g, '&amp;') .replace(/</g, '&lt;') .replace(/>/g, '&gt;') .replace(/"/g, '&quot;')
+.replace(/'/g, '&#039;');
+}
+const PAYMENT_LABELS = {
+bank_transfer: 'حوالة بنكية',
+barq: 'برق',
+apple_pay: 'Apple Pay',
+mada: 'مدى',
+visa: 'فيزا',
+mastercard: 'ماستركارد'
+};
+const STATUS_LABELS = {
+pending: 'قيد الانتظار',
+confirmed: 'مؤكد',
+completed: 'مكتمل',
+cancelled: 'ملغي'
+};
+let allOrders = [];
+/* ------------------------------------------------------------
+AUTH GATE
+------------------------------------------------------------ */
+async function checkAuthAndInit() {
+const session = await adminGetSession();
+if (session) {
+showDashboard();
+} else {
+document.getElementById('login-screen').style.display = 'flex';
+}
+}
+document.getElementById('login-form').addEventListener('submit', async (e) => {
+e.preventDefault();
+const email = document.getElementById('admin-email').value.trim();
+const password = document.getElementById('admin-password').value;
+const errorEl = document.getElementById('login-error');
+const btn = document.getElementById('login-btn');
+btn.disabled = true;
+btn.textContent = 'جاري تسجيل الدخول...';
+errorEl.style.display = 'none';
+const result = await adminSignIn(email, password);
+btn.disabled = false;
+btn.textContent = 'تسجيل الدخول';
+if (result.success) {
+showDashboard();
+} else {
+errorEl.textContent = 'بيانات الدخول غير صحيحة أو الحساب غير مفعّل';
+errorEl.style.display = 'block';
+}
+});
+document.getElementById('logout-btn').addEventListener('click', async () => {
+await adminSignOut();
+document.getElementById('admin-shell').style.display = 'none';
+document.getElementById('login-screen').style.display = 'flex';
+});
+function showDashboard() {
+document.getElementById('login-screen').style.display = 'none';
+document.getElementById('admin-shell').style.display = 'block';
+loadOrders();
+}
+/* ------------------------------------------------------------
+ORDERS LOADING / RENDERING
+------------------------------------------------------------ */
+async function loadOrders() {
+const tbody = document.getElementById('orders-tbody');
+tbody.innerHTML = '<tr class="empty-row"><td colspan="8"><i class="fas fa-spinner fa-spin"></i> جاري التحميل...</td></tr>';
+const result = await fetchAllOrders();
+if (!result.success) {
+tbody.innerHTML = `<tr class="empty-row"><td colspan="8">
+تعذّر تحميل الطلبات. تأكد من تسجيل الدخول وأن صلاحيات RLS مفعّلة بشكل صحيح.<br>
+<small>${result.error || ''}</small>
+</td></tr>`;
+return;
+}
+allOrders = result.orders;
+renderStats();
+renderOrdersTable();
+}
+function renderStats() {
+document.getElementById('stat-total').textContent = allOrders.length;
+document.getElementById('stat-pending').textContent = allOrders.filter(o => o.status === 'pending').length;
+document.getElementById('stat-completed').textContent = allOrders.filter(o => o.status === 'completed').length;
+const revenue = allOrders
+.filter(o => o.status !== 'cancelled')
+.reduce((sum, o) => sum + Number(o.total_price || 0), 0);
+document.getElementById('stat-revenue').textContent = revenue.toFixed(2) + ' ر.س';
+}
+function getFilteredOrders() {
+const q = document.getElementById('search-orders').value.trim().toLowerCase();
+const statusFilter = document.getElementById('filter-status').value;
+return allOrders.filter(o => {
+if (statusFilter && o.status !== statusFilter) return false;
+if (q) {
+const haystack = `${o.order_number} ${o.customer_name} ${o.mobile_number}`.toLowerCase();
+if (!haystack.includes(q)) return false;
+}
+return true;
+});
+}
+function formatDate(iso) {
+try {
+const d = new Date(iso);
+return d.toLocaleString('ar-SA', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+} catch {
+return iso;
+}
+}
+function renderOrdersTable() {
+const tbody = document.getElementById('orders-tbody');
+const list = getFilteredOrders();
+if (!list.length) {
+tbody.innerHTML = '<tr class="empty-row"><td colspan="8">لا توجد طلبات مطابقة</td></tr>';
+return;
+}
+tbody.innerHTML = list.map(o => {
+const items = Array.isArray(o.items) ? o.items : [];
+const productsSummary = items.map(i => `${escapeHtml(i.product_name)} ×${escapeHtml(i.qty)}`).join('، ');
+return `
+<tr class="order-row" onclick="openOrderDetail('${o.id}')">
+<td><span class="order-num">${escapeHtml(o.order_number)}</span></td>
+<td>${escapeHtml(o.customer_name)}</td>
+<td style="direction:ltr;text-align:right;">${escapeHtml(o.mobile_number)}</td>
+<td>${productsSummary || '—'}</td>
+<td>${Number(o.total_price).toFixed(2)} ر.س</td>
+<td>${PAYMENT_LABELS[o.payment_method] || escapeHtml(o.payment_method)}</td>
+<td><span class="status-badge status-${o.status}">${STATUS_LABELS[o.status] || escapeHtml(o.status)}</span></td>
+<td>${formatDate(o.created_at)}</td>
+</tr>`;
+}).join('');
+}
+document.getElementById('search-orders').addEventListener('input', renderOrdersTable);
+document.getElementById('filter-status').addEventListener('change', renderOrdersTable);
+document.getElementById('refresh-btn').addEventListener('click', loadOrders);
+/* ------------------------------------------------------------
+ORDER DETAIL MODAL
+------------------------------------------------------------ */
+function openOrderDetail(orderId) {
+const order = allOrders.find(o => String(o.id) === String(orderId));
+if (!order) return;
+document.getElementById('modal-order-num').textContent = order.order_number;
+const items = Array.isArray(order.items) ? order.items : [];
+const body = document.getElementById('order-modal-body');
+body.innerHTML = `
+<div class="detail-row"><span class="k">العميل</span><span class="v">${escapeHtml(order.customer_name)}</span></div>
+<div class="detail-row"><span class="k">الجوال</span><span class="v" style="direction:ltr;">${escapeHtml(order.mobile_number)}</span></div>
+<div class="detail-row"><span class="k">البريد الإلكتروني</span><span class="v" style="direction:ltr;">${escapeHtml(order.email) || '—'}</span></div>
+<div class="detail-row"><span class="k">ملاحظات</span><span class="v">${escapeHtml(order.notes) || '—'}</span></div>
+<div class="detail-row"><span class="k">طريقة الدفع</span><span class="v">${PAYMENT_LABELS[order.payment_method] || escapeHtml(order.payment_method)}</span></div>
+<div class="detail-row"><span class="k">التاريخ</span><span class="v">${formatDate(order.created_at)}</span></div>
+<div class="detail-row"><span class="k">الإجمالي</span><span class="v">${Number(order.total_price).toFixed(2)} ر.س</span></div>
+<div class="detail-items">
+<div class="detail-row"><span class="k" style="font-weight:700;">المنتجات المطلوبة</span></div>
+${items.map(i => `<div class="detail-item-row"><span>${escapeHtml(i.product_name)} ×${escapeHtml(i.qty)}</span><span>${Number(i.subtotal || i.price * i.qty).toFixed(2)} ر.س</span></div>`).join('')}
+</div>
+<label style="display:block;margin-top:16px;font-size:.85rem;font-weight:700;color:var(--text-600);">تحديث حالة الطلب</label>
+<select class="status-select" id="status-update-select" data-order-id="${order.id}">
+${Object.entries(STATUS_LABELS).map(([val, label]) =>
+`<option value="${val}" ${val === order.status ? 'selected' : ''}>${label}</option>`
+).join('')}
+</select>
+`;
+document.getElementById('status-update-select').addEventListener('change', async (e) => {
+const newStatus = e.target.value;
+const orderId = e.target.dataset.orderId;
+e.target.disabled = true;
+const result = await updateOrderStatus(orderId, newStatus);
+e.target.disabled = false;
+if (result.success) {
+order.status = newStatus;
+renderStats();
+renderOrdersTable();
+} else {
+alert('تعذّر تحديث الحالة: ' + (result.error || 'خطأ غير معروف'));
+}
+});
+document.getElementById('order-modal-overlay').classList.add('open');
+}
+document.getElementById('order-modal-close').addEventListener('click', () => {
+document.getElementById('order-modal-overlay').classList.remove('open');
+});
+document.getElementById('order-modal-overlay').addEventListener('click', (e) => {
+if (e.target === e.currentTarget) {
+document.getElementById('order-modal-overlay').classList.remove('open');
+}
+});
+if (localStorage.getItem('sevenstore-dark') === '1') {
+document.documentElement.setAttribute('data-theme', 'dark');
+}
+checkAuthAndInit();</script>
+</body>
+</html>

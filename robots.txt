@@ -1,0 +1,18 @@
+# robots.txt — Seven Store
+# https://sevenstoore.com/
+
+User-agent: *
+Allow: /
+
+# Block private / system paths
+Disallow: /assets/hero.mp4
+Disallow: /*.json$
+Disallow: /admin.html
+Disallow: /checkout.html
+Disallow: /success.html
+
+# Allow crawlers to access images for rich results
+Allow: /assets/images/
+
+# Sitemap
+Sitemap: https://sevenstoore.com/sitemap.xml

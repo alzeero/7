@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ══════════════════════════════════════════
+       PRIMARY SEO META TAGS
+  ══════════════════════════════════════════ -->
+  <title>إتمام الطلب | Seven Store</title>
+  <meta name="description" content="أكمل عملية الشراء واختر طريقة الدفع المناسبة لك في Seven Store." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#1a3bcc" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="canonical" href="https://sevenstoore.com/checkout.html" />
+
+  <!-- ══════════════════════════════════════════
+       FAVICONS & TOUCH ICONS
+  ══════════════════════════════════════════ -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png" />
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png" />
+
+  <!-- ══════════════════════════════════════════
+       PWA — WEB APP MANIFEST
+  ══════════════════════════════════════════ -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Seven Store" />
+  <meta name="application-name" content="Seven Store" />
+
+  <!-- ══════════════════════════════════════════
+       PERFORMANCE — PRECONNECT & DNS PREFETCH
+  ══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
+  <!-- ══════════════════════════════════════════
+       FONTS — DISPLAY=SWAP FOR PERFORMANCE
+  ══════════════════════════════════════════ -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>:root{--blue-900:#0d1f6e;--blue-800:#1a3bcc;--blue-700:#2347e0;--blue-600:#3358f4;--blue-500:#4a6cf7;--blue-400:#6b8dff;--blue-100:#e8edff;--blue-50:#f0f3ff;--bg:#EEF4FF;--bg-soft:#f0f2f8;--white:#ffffff;--text-900:#0f172a;--text-600:#475569;--text-400:#94a3b8;--border:#e2e8f0;--shadow-sm:0 1px 3px rgba(26,59,204,.08);--shadow-md:0 4px 24px rgba(26,59,204,.12);--shadow-lg:0 16px 48px rgba(26,59,204,.18);--shadow-xl:0 32px 80px rgba(26,59,204,.22);--radius-sm:10px;--radius-md:16px;--radius-lg:24px;--radius-xl:32px;--transition:.3s cubic-bezier(.4,0,.2,1);--font-ar:'Cairo','IBM Plex Sans Arabic',sans-serif;--font-en:'Inter',sans-serif}[data-theme="dark"]{--bg:#0a0f1e;--bg-soft:#111827;--white:#1e293b;--text-900:#f1f5f9;--text-600:#94a3b8;--text-400:#64748b;--border:#1e293b;--shadow-sm:0 1px 3px rgba(0,0,0,.4);--shadow-md:0 4px 24px rgba(0,0,0,.5);--shadow-lg:0 16px 48px rgba(0,0,0,.6);--shadow-xl:0 32px 80px rgba(0,0,0,.7)}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body,#navbar,footer,.checkout-card{transition:background-color var(--transition),background var(--transition),color var(--transition),border-color var(--transition),box-shadow var(--transition)}body{font-family:var(--font-ar);background:var(--bg);color:var(--text-900);transition:background var(--transition),color var(--transition);overflow-x:hidden;line-height:1.7}body.en{font-family:var(--font-en)}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}button{cursor:pointer;border:none;background:none;font-family:inherit}#progress-bar{position:fixed;top:0;right:0;height:3px;width:0%;background:linear-gradient(90deg,var(--blue-600),var(--blue-400));z-index:9999;border-radius:2px;transition:width .1s linear}#navbar{position:fixed;top:0;width:100%;z-index:1000;background:#ffffff;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all var(--transition)}[data-theme="dark"] #navbar{background:rgba(10,15,30,.85)}#navbar.scrolled{box-shadow:var(--shadow-md)}.nav-inner{max-width:1320px;margin:0 auto;padding:0 24px;height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}.nav-logo img{height:60px;width:auto;object-fit:contain;transition:transform var(--transition)}.nav-logo img:hover{transform:scale(1.04)}.nav-actions{display:flex;align-items:center;gap:10px}.btn-lang{font-size:.85rem;font-weight:600;color:var(--blue-700);border:1.5px solid var(--blue-200,#c7d3ff);padding:7px 16px;border-radius:99px;min-width:44px;text-align:center;transition:all var(--transition)}.btn-lang:hover{background:var(--blue-700);color:#fff}[data-theme="dark"] .btn-lang{color:#ffffff}.btn-dark{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-soft);color:var(--text-600);font-size:1rem;transition:all var(--transition)}.btn-dark:hover{background:var(--blue-700);color:#fff}.subpage-header-close{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-soft);color:var(--text-600);font-size:1.05rem;transition:all var(--transition)}.subpage-header-close:hover{background:var(--blue-700);color:#fff;transform:scale(1.08)}.checkout-page{padding:120px 24px 90px;max-width:1100px;margin:0 auto}.checkout-header{text-align:center;margin-bottom:40px}.checkout-header h1{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;margin-bottom:8px}.checkout-header p{color:var(--text-600)}.checkout-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}.checkout-card{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--border);padding:28px;box-shadow:var(--shadow-sm)}.checkout-card h2{font-size:1.1rem;font-weight:800;margin-bottom:18px;display:flex;align-items:center;gap:8px}.checkout-card h2 i{color:var(--blue-700)}.form-group{margin-bottom:18px}.form-group label{display:block;font-size:.88rem;font-weight:700;margin-bottom:6px;color:var(--text-600)}.form-group label .req{color:#dc2626}.form-group input,.form-group textarea{width:100%;padding:12px 14px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:.95rem;font-family:inherit;color:var(--text-900);transition:all var(--transition);outline:none}.form-group input:focus,.form-group textarea:focus{border-color:var(--blue-500);box-shadow:0 0 0 3px rgba(74,108,247,.15)}.form-group textarea{resize:vertical;min-height:80px}.form-error{color:#dc2626;font-size:.8rem;margin-top:4px;display:none}.form-group.invalid input,.form-group.invalid textarea{border-color:#dc2626}.form-group.invalid .form-error{display:block}.payment-methods{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}.payment-option{border:1.5px solid var(--border);border-radius:var(--radius-md);padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:all var(--transition);text-align:center;background:var(--bg)}.payment-option input{position:absolute;opacity:0;pointer-events:none}.payment-option .pm-icon{font-size:1.6rem;color:var(--blue-700)}.payment-option .pm-label{font-size:.85rem;font-weight:700}.payment-option:hover{border-color:var(--blue-400)}.payment-option.selected{border-color:var(--blue-700);background:linear-gradient(135deg,var(--blue-50),var(--blue-100));box-shadow:0 4px 16px rgba(26,59,204,.15)}[data-theme="dark"] .payment-option.selected{background:rgba(74,108,247,.12)}.cart-summary-item{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:.9rem}.cart-summary-item:last-child{border-bottom:none}.cart-summary-name{font-weight:700}.cart-summary-qty{color:var(--text-400);font-size:.82rem}.cart-summary-total-row{display:flex;justify-content:space-between;align-items:center;padding-top:16px;margin-top:8px;border-top:2px solid var(--border);font-size:1.15rem;font-weight:800}.cart-summary-total-row span:last-child{color:var(--blue-700)}.checkout-empty{text-align:center;padding:60px 24px;color:var(--text-400)}.checkout-empty i{font-size:3rem;margin-bottom:16px;display:block}.btn-submit-order{width:100%;justify-content:center;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--blue-700) 0%,var(--blue-500) 100%);color:#fff;padding:16px;border-radius:var(--radius-md);font-size:1.05rem;font-weight:700;box-shadow:0 8px 32px rgba(26,59,204,.35);transition:all var(--transition);margin-top:8px}.btn-submit-order:hover{transform:translateY(-2px)}.btn-submit-order:disabled{opacity:.6;pointer-events:none}.btn-submit-order .fa-spinner{display:none}.btn-submit-order.loading .fa-spinner{display:inline-block}.btn-submit-order.loading .fa-paper-plane{display:none}@media(max-width:860px){.checkout-grid{grid-template-columns:1fr}}@media(max-width:480px){.payment-methods{grid-template-columns:1fr 1fr}.checkout-page{padding:110px 16px 60px}}.payment-methods{grid-template-columns:repeat(3,1fr)}.payment-option[data-disabled="true"]{opacity:.55;position:relative}.payment-option[data-disabled="true"]:hover{border-color:var(--border)}.payment-details-panel{margin-top:14px;padding:16px;border-radius:var(--radius-md);background:var(--bg);border:1.5px solid var(--border)}.pd-row{padding:8px 0;border-bottom:1px dashed var(--border)}.pd-row:last-child{border-bottom:none}.pd-label{display:block;font-size:.78rem;color:var(--text-400);margin-bottom:4px;font-weight:700}.pd-value-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.pd-value{font-weight:700;font-size:.92rem;word-break:break-all}.btn-copy-field{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--blue-700);font-size:.8rem;transition:all var(--transition)}.btn-copy-field:hover{background:var(--blue-700);color:#fff}.btn-copy-field.copied{background:#22c55e;border-color:#22c55e;color:#fff}#payment-soon-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:9500;display:none;align-items:center;justify-content:center;padding:20px}#payment-soon-overlay.open{display:flex}#payment-soon-box{background:var(--white);border-radius:var(--radius-lg);max-width:380px;width:100%;padding:32px 26px;text-align:center;box-shadow:0 16px 48px rgba(26,59,204,.18)}.payment-soon-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#d97706);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.6rem;margin:0 auto 18px}#payment-soon-box h2{font-size:1.05rem;font-weight:800;margin-bottom:10px}#payment-soon-box p{font-size:.88rem;color:var(--text-600);margin-bottom:20px;line-height:1.7}@media(max-width:560px){.payment-methods{grid-template-columns:repeat(2,1fr)}}</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Seven Store">
+      <img src="assets/images/logo-nav-light.webp" alt="Seven Store" id="nav-logo-img" onerror="this.src='assets/images/logo-nav-light.png'" />
+    </a>
+    <div class="nav-actions">
+      <button class="btn-lang" id="lang-toggle" aria-label="Switch language">EN</button>
+      <button class="btn-dark" id="dark-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="subpage-header-close" id="header-close-btn" aria-label="إغلاق">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main>
+<div class="checkout-page">
+  <div class="checkout-header">
+    <h1 data-ar="إتمام الطلب" data-en="Checkout">إتمام الطلب</h1>
+    <p data-ar="أدخل بياناتك واختر طريقة الدفع لإكمال طلبك" data-en="Enter your details and choose a payment method to complete your order">أدخل بياناتك واختر طريقة الدفع لإكمال طلبك</p>
+  </div>
+
+  <div id="checkout-empty-state" class="checkout-empty" style="display:none;">
+    <i class="fas fa-shopping-cart"></i>
+    <p data-ar="سلتك فارغة. أضف منتجات أولاً لإتمام الطلب." data-en="Your cart is empty. Add products first to check out.">سلتك فارغة. أضف منتجات أولاً لإتمام الطلب.</p>
+    <a href="index.html#products" class="btn-submit-order" style="max-width:280px;margin:20px auto 0;" data-ar="تصفح المنتجات" data-en="Browse Products">تصفح المنتجات</a>
+  </div>
+
+  <form id="checkout-form" class="checkout-grid" novalidate>
+    <div class="checkout-card">
+      <h2><i class="fas fa-user"></i> <span data-ar="بيانات العميل" data-en="Customer Information">بيانات العميل</span></h2>
+
+      <div class="form-group" id="group-name">
+        <label for="customer-name" data-ar="الاسم الكامل" data-en="Full Name"><span data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</span> <span class="req">*</span></label>
+        <input type="text" id="customer-name" name="customer-name" autocomplete="name" required />
+        <div class="form-error" data-ar="الرجاء إدخال الاسم الكامل" data-en="Please enter your full name">الرجاء إدخال الاسم الكامل</div>
+      </div>
+
+      <div class="form-group" id="group-mobile">
+        <label for="customer-mobile"><span data-ar="رقم الجوال" data-en="Mobile Number">رقم الجوال</span> <span class="req">*</span></label>
+        <input type="tel" id="customer-mobile" name="customer-mobile" autocomplete="tel" inputmode="tel" placeholder="05xxxxxxxx" required style="direction:ltr;text-align:right;" />
+        <div class="form-error" data-ar="الرجاء إدخال رقم جوال صحيح" data-en="Please enter a valid mobile number">الرجاء إدخال رقم جوال صحيح</div>
+      </div>
+
+      <div class="form-group" id="group-email">
+        <label for="customer-email"><span data-ar="البريد الإلكتروني (اختياري)" data-en="Email (Optional)">البريد الإلكتروني (اختياري)</span></label>
+        <input type="email" id="customer-email" name="customer-email" autocomplete="email" style="direction:ltr;text-align:right;" />
+        <div class="form-error" data-ar="الرجاء إدخال بريد إلكتروني صحيح" data-en="Please enter a valid email">الرجاء إدخال بريد إلكتروني صحيح</div>
+      </div>
+
+      <div class="form-group" id="group-notes">
+        <label for="customer-notes"><span data-ar="ملاحظات (اختياري)" data-en="Notes (Optional)">ملاحظات (اختياري)</span></label>
+        <textarea id="customer-notes" name="customer-notes"></textarea>
+      </div>
+
+      <h2 style="margin-top:28px;"><i class="fas fa-credit-card"></i> <span data-ar="طريقة الدفع" data-en="Payment Method">طريقة الدفع</span></h2>
+      <div class="payment-methods" id="payment-methods" role="radiogroup" aria-label="Payment Method">
+        <label class="payment-option" data-method="bank_transfer">
+          <input type="radio" name="payment_method" value="bank_transfer" />
+          <i class="fas fa-building-columns pm-icon"></i>
+          <span class="pm-label" data-ar="حوالة بنكية" data-en="Bank Transfer">حوالة بنكية</span>
+        </label>
+        <label class="payment-option" data-method="barq">
+          <input type="radio" name="payment_method" value="barq" />
+          <i class="fas fa-bolt pm-icon"></i>
+          <span class="pm-label" data-ar="برق" data-en="Barq">برق</span>
+        </label>
+        <label class="payment-option" data-method="apple_pay" data-disabled="true">
+          <input type="radio" name="payment_method" value="apple_pay" disabled />
+          <i class="fab fa-apple-pay pm-icon"></i>
+          <span class="pm-label" data-ar="Apple Pay" data-en="Apple Pay">Apple Pay</span>
+        </label>
+        <label class="payment-option" data-method="mada" data-disabled="true">
+          <input type="radio" name="payment_method" value="mada" disabled />
+          <i class="fas fa-credit-card pm-icon"></i>
+          <span class="pm-label" data-ar="مدى" data-en="Mada">مدى</span>
+        </label>
+        <label class="payment-option" data-method="visa" data-disabled="true">
+          <input type="radio" name="payment_method" value="visa" disabled />
+          <i class="fab fa-cc-visa pm-icon"></i>
+          <span class="pm-label" data-ar="فيزا" data-en="Visa">فيزا</span>
+        </label>
+        <label class="payment-option" data-method="mastercard" data-disabled="true">
+          <input type="radio" name="payment_method" value="mastercard" disabled />
+          <i class="fab fa-cc-mastercard pm-icon"></i>
+          <span class="pm-label" data-ar="ماستركارد" data-en="Mastercard">ماستركارد</span>
+        </label>
+      </div>
+
+      <div class="payment-details-panel" id="bank-transfer-panel" style="display:none;">
+        <div class="pd-row">
+          <span class="pd-label" data-ar="البنك" data-en="Bank">البنك</span>
+          <div class="pd-value-row">
+            <span class="pd-value" data-ar="مصرف الراجحي" data-en="Al Rajhi Bank">مصرف الراجحي</span>
+            <button type="button" class="btn-copy-field" data-copy-ar="مصرف الراجحي" data-copy-en="Al Rajhi Bank" aria-label="Copy"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+        <div class="pd-row">
+          <span class="pd-label" data-ar="المستفيد" data-en="Account Name">المستفيد</span>
+          <div class="pd-value-row">
+            <span class="pd-value" data-ar="عبدالله صالح الحايك" data-en="Abdullah Saleh Al-Hayek">عبدالله صالح الحايك</span>
+            <button type="button" class="btn-copy-field" data-copy-ar="عبدالله صالح الحايك" data-copy-en="Abdullah Saleh Al-Hayek" aria-label="Copy"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+        <div class="pd-row">
+          <span class="pd-label" data-ar="رقم الحساب" data-en="Account Number">رقم الحساب</span>
+          <div class="pd-value-row">
+            <span class="pd-value" style="direction:ltr;">151000010006086168186</span>
+            <button type="button" class="btn-copy-field" data-copy="151000010006086168186" aria-label="Copy"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+        <div class="pd-row">
+          <span class="pd-label">IBAN</span>
+          <div class="pd-value-row">
+            <span class="pd-value" style="direction:ltr;">SA7180000151608016168186</span>
+            <button type="button" class="btn-copy-field" data-copy="SA7180000151608016168186" aria-label="Copy"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-details-panel" id="barq-panel" style="display:none;">
+        <div class="pd-row">
+          <span class="pd-label" data-ar="رقم برق" data-en="Barq Number">رقم برق</span>
+          <div class="pd-value-row">
+            <span class="pd-value" style="direction:ltr;">0597777546</span>
+            <button type="button" class="btn-copy-field" data-copy="0597777546" aria-label="Copy"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="form-error" id="payment-method-error" data-ar="الرجاء اختيار طريقة الدفع" data-en="Please select a payment method">الرجاء اختيار طريقة الدفع</div>
+
+      <button type="submit" class="btn-submit-order" id="submit-order-btn">
+        <i class="fas fa-paper-plane"></i>
+        <i class="fas fa-spinner fa-spin"></i>
+        <span data-ar="تأكيد الطلب" data-en="Confirm Order">تأكيد الطلب</span>
+      </button>
+    </div>
+
+    <div class="checkout-card">
+      <h2><i class="fas fa-receipt"></i> <span data-ar="ملخص الطلب" data-en="Order Summary">ملخص الطلب</span></h2>
+      <div id="checkout-items"></div>
+      <div class="cart-summary-total-row">
+        <span data-ar="الإجمالي" data-en="Total">الإجمالي</span>
+        <span id="checkout-total-amount">0 ر.س</span>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id="payment-soon-overlay" role="dialog" aria-modal="true" aria-labelledby="payment-soon-title">
+  <div id="payment-soon-box">
+    <div class="payment-soon-icon"><i class="fas fa-clock"></i></div>
+    <h2 id="payment-soon-title" data-ar="هذه الوسيلة غير متاحة حالياً" data-en="This method is currently unavailable">هذه الوسيلة غير متاحة حالياً</h2>
+    <p data-ar="هذه الوسيلة متوقفة حالياً، وسيتم تفعيلها قريباً. يرجى اختيار التحويل البنكي أو برق لإكمال الطلب." data-en="This payment method is currently disabled and will be enabled soon. Please choose Bank Transfer or Barq to complete your order.">هذه الوسيلة متوقفة حالياً، وسيتم تفعيلها قريباً. يرجى اختيار التحويل البنكي أو برق لإكمال الطلب.</p>
+    <button type="button" class="btn-submit-order" id="payment-soon-close" style="max-width:220px;margin:0 auto;" data-ar="حسناً" data-en="OK">حسناً</button>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="footer-inner" style="text-align:center;padding:24px;">
+    <p class="footer-copy">
+      <span data-ar="© 2026 سيفن ستور — جميع الحقوق محفوظة." data-en="© 2026 Seven Store — All Rights Reserved.">© 2026 سيفن ستور — جميع الحقوق محفوظة.</span>
+    </p>
+  </div>
+</footer>
+
+<script src="assets/js/supabase-client.js"></script>
+<script src="assets/js/cart.js"></script>
+<script>let currentLang = 'ar'; function escapeHtml(value) { if (value === null || value === undefined) return ''; return String(value) .replace(/&/g, '&amp;') .replace(/</g, '&lt;') .replace(/>/g, '&gt;') .replace(/"/g, '&quot;')
+.replace(/'/g, '&#039;');
+}
+function applyLangSubpage() {
+document.documentElement.lang = currentLang;
+document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+document.body.classList.toggle('en', currentLang === 'en');
+document.querySelectorAll('[data-ar]').forEach(el => {
+el.textContent = currentLang === 'ar' ? el.dataset.ar : el.dataset.en;
+});
+document.querySelectorAll('#lang-toggle, #lang-toggle-m').forEach(btn => {
+btn.textContent = currentLang === 'ar' ? 'EN' : 'ع';
+});
+renderCheckoutItems();
+}
+function toggleLangSubpage() {
+currentLang = currentLang === 'ar' ? 'en' : 'ar';
+localStorage.setItem('sevenstore-lang', currentLang);
+applyLangSubpage();
+}
+document.getElementById('lang-toggle').addEventListener('click', toggleLangSubpage);
+if (localStorage.getItem('sevenstore-lang')) {
+currentLang = localStorage.getItem('sevenstore-lang');
+}
+const darkBtn = document.getElementById('dark-toggle');
+const navLogoImg = document.getElementById('nav-logo-img');
+function setDark(on) {
+document.documentElement.setAttribute('data-theme', on ? 'dark' : 'light');
+darkBtn.innerHTML = on ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+localStorage.setItem('sevenstore-dark', on ? '1' : '0');
+if (navLogoImg) navLogoImg.src = on ? 'assets/images/logo-nav-dark.webp' : 'assets/images/logo-nav-light.webp';
+}
+darkBtn.addEventListener('click', () => {
+setDark(document.documentElement.getAttribute('data-theme') !== 'dark');
+});
+if (localStorage.getItem('sevenstore-dark') === '1' || (!localStorage.getItem('sevenstore-dark') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+setDark(true);
+} else {
+setDark(false);
+}
+document.getElementById('header-close-btn').addEventListener('click', () => {
+window.location.href = 'index.html';
+});
+window.addEventListener('scroll', () => {
+const sc = document.documentElement.scrollTop;
+const sh = document.documentElement.scrollHeight - window.innerHeight;
+document.getElementById('progress-bar').style.width = (sh > 0 ? (sc / sh * 100) : 0) + '%';
+document.getElementById('navbar').classList.toggle('scrolled', sc > 10);
+});
+/* ------------------------------------------------------------
+ORDER SUMMARY RENDERING
+------------------------------------------------------------ */
+function renderCheckoutItems() {
+const cart = cartLoad();
+const itemsWrap = document.getElementById('checkout-items');
+const emptyState = document.getElementById('checkout-empty-state');
+const form = document.getElementById('checkout-form');
+if (!cart.length) {
+emptyState.style.display = 'block';
+form.style.display = 'none';
+return;
+}
+emptyState.style.display = 'none';
+form.style.display = 'grid';
+itemsWrap.innerHTML = cart.map(item => `
+<div class="cart-summary-item">
+<div>
+<div class="cart-summary-name">${escapeHtml(item.product_name)}</div>
+<div class="cart-summary-qty">${currentLang === 'ar' ? 'الكمية' : 'Qty'}: ${item.qty}</div>
+</div>
+<div>${(item.price * item.qty).toFixed(2)} ${currentLang === 'ar' ? 'ر.س' : 'SAR'}</div>
+</div>
+`).join('');
+document.getElementById('checkout-total-amount').textContent =
+`${cartTotal().toFixed(2)} ${currentLang === 'ar' ? 'ر.س' : 'SAR'}`;
+}
+/* ------------------------------------------------------------
+PAYMENT METHOD SELECTION
+------------------------------------------------------------ */
+const DISABLED_PAYMENT_METHODS = ['apple_pay', 'mada', 'visa', 'mastercard'];
+function openPaymentSoonModal() {
+document.getElementById('payment-soon-overlay').classList.add('open');
+}
+function closePaymentSoonModal() {
+document.getElementById('payment-soon-overlay').classList.remove('open');
+}
+document.getElementById('payment-soon-close').addEventListener('click', closePaymentSoonModal);
+document.getElementById('payment-soon-overlay').addEventListener('click', e => {
+if (e.target === e.currentTarget) closePaymentSoonModal();
+});
+function updatePaymentDetailPanels(method) {
+document.getElementById('bank-transfer-panel').style.display = method === 'bank_transfer' ? 'block' : 'none';
+document.getElementById('barq-panel').style.display = method === 'barq' ? 'block' : 'none';
+}
+document.querySelectorAll('.payment-option').forEach(opt => {
+opt.addEventListener('click', (e) => {
+const method = opt.dataset.method;
+if (DISABLED_PAYMENT_METHODS.includes(method)) {
+e.preventDefault();
+openPaymentSoonModal();
+return;
+}
+document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
+opt.classList.add('selected');
+opt.querySelector('input').checked = true;
+document.getElementById('payment-method-error').style.display = 'none';
+updatePaymentDetailPanels(method);
+});
+});
+document.querySelectorAll('.btn-copy-field').forEach(btn => {
+btn.addEventListener('click', (e) => {
+e.preventDefault();
+e.stopPropagation();
+const text = btn.dataset.copy || (currentLang === 'ar' ? btn.dataset.copyAr : btn.dataset.copyEn) || '';
+navigator.clipboard.writeText(text).then(() => {
+btn.classList.add('copied');
+const icon = btn.querySelector('i');
+icon.className = 'fas fa-check';
+setTimeout(() => {
+btn.classList.remove('copied');
+icon.className = 'fas fa-copy';
+}, 1600);
+}).catch(() => {
+showCopyFallback(text);
+});
+});
+});
+function showCopyFallback(text) {
+const ta = document.createElement('textarea');
+ta.value = text;
+ta.style.position = 'fixed';
+ta.style.opacity = '0';
+document.body.appendChild(ta);
+ta.select();
+try { document.execCommand('copy'); } catch (err) { /* no-op */ }
+document.body.removeChild(ta);
+}
+/* ------------------------------------------------------------
+FORM VALIDATION + SUBMISSION
+------------------------------------------------------------ */
+function validateField(groupId, isValid) {
+const group = document.getElementById(groupId);
+group.classList.toggle('invalid', !isValid);
+return isValid;
+}
+function isValidMobile(value) {
+const digits = value.replace(/[^\d+]/g, '');
+return digits.length >= 9;
+}
+function isValidEmail(value) {
+if (!value) return true; // optional
+return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+document.getElementById('checkout-form').addEventListener('submit', async (e) => {
+e.preventDefault();
+const cart = cartLoad();
+if (!cart.length) return;
+const nameInput = document.getElementById('customer-name');
+const mobileInput = document.getElementById('customer-mobile');
+const emailInput = document.getElementById('customer-email');
+const notesInput = document.getElementById('customer-notes');
+const selectedPayment = document.querySelector('input[name="payment_method"]:checked');
+const nameValid = validateField('group-name', nameInput.value.trim().length >= 2);
+const mobileValid = validateField('group-mobile', isValidMobile(mobileInput.value));
+const emailValid = validateField('group-email', isValidEmail(emailInput.value.trim()));
+const paymentErrorEl = document.getElementById('payment-method-error');
+const paymentValid = !!selectedPayment;
+paymentErrorEl.style.display = paymentValid ? 'none' : 'block';
+if (!nameValid || !mobileValid || !emailValid || !paymentValid) return;
+const submitBtn = document.getElementById('submit-order-btn');
+submitBtn.classList.add('loading');
+submitBtn.disabled = true;
+const items = cart.map(item => ({
+id: item.id,
+product_name: item.product_name,
+price: item.price,
+qty: item.qty,
+subtotal: Math.round(item.price * item.qty * 100) / 100
+}));
+const result = await createOrder({
+customerName: nameInput.value.trim(),
+mobileNumber: mobileInput.value.trim(),
+email: emailInput.value.trim(),
+notes: notesInput.value.trim(),
+items: items,
+totalPrice: Math.round(cartTotal() * 100) / 100,
+paymentMethod: selectedPayment.value
+});
+submitBtn.classList.remove('loading');
+submitBtn.disabled = false;
+if (result.success) {
+cartClear();
+sessionStorage.setItem('sevenstore-last-order', result.orderNumber);
+window.location.href = 'success.html';
+} else {
+alert(currentLang === 'ar'
+? 'حدث خطأ أثناء إرسال الطلب. الرجاء المحاولة مرة أخرى أو التواصل معنا عبر واتساب.'
+: 'An error occurred while submitting your order. Please try again or contact us via WhatsApp.');
+}
+});
+applyLangSubpage();
+renderCheckoutItems();</script>
+</body>
+</html>
