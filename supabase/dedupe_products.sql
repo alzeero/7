@@ -42,11 +42,11 @@ order by product_name, created_at;
 -- Step 1 results above, paste them into the list below, then run this
 -- statement on its own.
 --
--- delete from public.products
--- where id in (
---   'PASTE-DUPLICATE-ROW-ID-1',
---   'PASTE-DUPLICATE-ROW-ID-2'
--- );
+delete from public.products
+where id in (
+1,
+2
+);
 
 -- STEP 3 (optional but recommended) — prevent this from happening again.
 -- Once you've confirmed there are no duplicate names left, this makes
