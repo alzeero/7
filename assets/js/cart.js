@@ -100,8 +100,10 @@ function cartUpdateBadge() {
   });
 }
 
-/* Modern toast notification, e.g. "✅ Product added to cart successfully." */
-function showToast(message, duration = 2600) {
+/* Modern toast notification, e.g. "✅ Product added to cart successfully."
+   `type` can be 'default' (dark) or 'error' (red) — used for validation
+   errors like the "please complete required fields" checkout toast. */
+function showToast(message, duration = 2600, type = 'default') {
   let container = document.getElementById('toast-container');
   if (!container) {
     container = document.createElement('div');
@@ -119,8 +121,9 @@ function showToast(message, duration = 2600) {
 
   const toast = document.createElement('div');
   toast.textContent = message;
+  const bg = type === 'error' ? '#dc2626' : 'var(--text-900,#0f172a)';
   toast.style.cssText = `
-    background:var(--text-900,#0f172a); color:#fff;
+    background:${bg}; color:#fff;
     padding:14px 22px; border-radius:14px;
     font-size:.95rem; font-weight:600; text-align:center;
     box-shadow:0 12px 32px rgba(0,0,0,.25);

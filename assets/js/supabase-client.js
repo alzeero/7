@@ -77,6 +77,42 @@ async function fetchActiveProducts() {
 }
 
 /* ------------------------------------------------------------
+   RECEIPTS (Storage)
+   Payment receipt images (Bank Transfer / Barq) are uploaded to the
+   public "receipts" bucket before the order row is created, and the
+   resulting public URL is stored on the order as `receipt_url`.
+------------------------------------------------------------ */
+
+const RECEIPTS_BUCKET = 'receipts';
+
+/* Upload a single receipt image file. `orderNumber` is used as a folder
+   prefix so files are easy to find per-order in the bucket.
+   Returns { success: true, url } or { success: false, error }. */
+async function uploadReceipt(file, orderNumber) {
+  try {
+    if (!file) return { success: false, error: 'No file provided' };
+    const client = await getSupabaseClient();
+    const safeName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, '_');
+    const path = `${orderNumber}/${Date.now()}-${safeName}`;
+
+    const { error: uploadError } = await client.storage
+      .from(RECEIPTS_BUCKET)
+      .upload(path, file, { cacheControl: '3600', upsert: false });
+
+    if (uploadError) {
+      console.error('Supabase uploadReceipt error:', uploadError.message);
+      return { success: false, error: uploadError.message };
+    }
+
+    const { data } = client.storage.from(RECEIPTS_BUCKET).getPublicUrl(path);
+    return { success: true, url: data.publicUrl };
+  } catch (err) {
+    console.error('Supabase uploadReceipt exception:', err);
+    return { success: false, error: err.message || 'Unknown error' };
+  }
+}
+
+/* ------------------------------------------------------------
    ORDERS
 ------------------------------------------------------------ */
 
@@ -105,15 +141,15 @@ function generateOrderNumber() {
    insert itself succeeded — which is exactly the bug that made every
    order silently fail before. The order number is generated up front
    and returned directly instead of being read back from the database. */
-async function createOrder({ customerName, mobileNumber, email, notes, items, totalPrice, paymentMethod }) {
+async function createOrder({ customerName, mobileNumber, email, notes, items, totalPrice, paymentMethod, receiptUrl, orderNumber }) {
   try {
     const client = await getSupabaseClient();
-    const orderNumber = generateOrderNumber();
+    const finalOrderNumber = orderNumber || generateOrderNumber();
 
     const { error } = await client
       .from('orders')
       .insert([{
-        order_number: orderNumber,
+        order_number: finalOrderNumber,
         customer_name: customerName,
         mobile_number: mobileNumber,
         email: email || null,
@@ -121,6 +157,7 @@ async function createOrder({ customerName, mobileNumber, email, notes, items, to
         items: items,
         total_price: totalPrice,
         payment_method: paymentMethod,
+        receipt_url: receiptUrl || null,
         status: 'pending'
       }]);
 
@@ -129,7 +166,7 @@ async function createOrder({ customerName, mobileNumber, email, notes, items, to
       return { success: false, error: error.message };
     }
 
-    return { success: true, orderNumber: orderNumber };
+    return { success: true, orderNumber: finalOrderNumber };
   } catch (err) {
     console.error('Supabase createOrder exception:', err);
     return { success: false, error: err.message || 'Unknown error' };
