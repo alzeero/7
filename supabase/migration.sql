@@ -119,6 +119,7 @@ alter table public.orders add column if not exists total_price numeric(10,2) not
 alter table public.orders add column if not exists payment_method text;
 alter table public.orders add column if not exists status text not null default 'pending';
 alter table public.orders add column if not exists created_at timestamptz not null default now();
+alter table public.orders add column if not exists receipt_url text;
 
 -- Ensure order_number is unique and not null once populated for existing rows
 do $$
@@ -192,6 +193,42 @@ create policy "Authenticated can update orders"
   using (true);
 
 -- ------------------------------------------------------------
+-- 3b. STORAGE — payment receipt uploads
+-- Bank Transfer and Barq both require the customer to upload a receipt
+-- image before the order can be submitted. Files are uploaded straight
+-- from the browser (anon key) into a public "receipts" bucket, and the
+-- resulting public URL is saved on the order row as `receipt_url`.
+-- Public here only means "files can be viewed via their URL if you have
+-- it" — the bucket is not listable/browsable by anon, and nobody can
+-- overwrite or delete another customer's file.
+-- ------------------------------------------------------------
+
+insert into storage.buckets (id, name, public)
+values ('receipts', 'receipts', true)
+on conflict (id) do nothing;
+
+drop policy if exists "Public can upload receipts" on storage.objects;
+create policy "Public can upload receipts"
+  on storage.objects
+  for insert
+  to anon
+  with check (bucket_id = 'receipts');
+
+drop policy if exists "Public can view receipts" on storage.objects;
+create policy "Public can view receipts"
+  on storage.objects
+  for select
+  to anon
+  using (bucket_id = 'receipts');
+
+drop policy if exists "Authenticated can view receipts" on storage.objects;
+create policy "Authenticated can view receipts"
+  on storage.objects
+  for select
+  to authenticated
+  using (bucket_id = 'receipts');
+
+-- ------------------------------------------------------------
 -- 4. CREATING YOUR FIRST ADMIN LOGIN
 -- These RLS policies grant order access to ANY authenticated user, so only
 -- give the login credentials below to people who should see customer orders.
@@ -208,6 +245,13 @@ create policy "Authenticated can update orders"
 -- inserted. Adjust prices/images any time directly in the Table Editor —
 -- re-running this file again will NOT overwrite manual price changes
 -- unless you edit the values below first.
+--
+-- ⚠️ If you have duplicate product_name rows (e.g. two Snapchat rows,
+-- two Shahid VIP rows), the unique constraint in Section 1 could not
+-- be created, so this ENTIRE insert...on conflict block below will be
+-- skipped (you'll see a "Product seed skipped" notice, not an error).
+-- Run supabase/dedupe_products.sql FIRST to remove duplicates, then
+-- re-run this file to apply the price/description updates.
 -- ------------------------------------------------------------
 
 do $$
@@ -216,12 +260,12 @@ begin
   values
     ('MR7 TV', 99, 'اشتراك سنوي — أكثر من 20,000 قناة عربية وعالمية، مكتبة ضخمة من الأفلام والمسلسلات، جودة SD/HD/FHD/4K، تحديث يومي للمحتوى، ضمان كامل طوال مدة الاشتراك.', 'assets/images/image_04.webp', true, 'streaming', '1 Year', 1, true),
     ('Snapchat+', 89, 'اشتراك سنوي — ضمان كامل طوال مدة الاشتراك، تفعيل على حسابك الشخصي، جميع مزايا سناب شات بلس الرسمية، استبدال فوري عند الحاجة، دعم فني متواصل.', 'assets/images/image_05.webp', true, 'social', '1 Year', 2, true),
-    ('Shahid VIP', 149, 'اشتراك سنوي — جودة Full HD و 4K، جميع باقات شاهد VIP، يعمل على جميع الأجهزة (موبايل، تلفزيون، متصفح)، ضمان طوال مدة الاشتراك، دعم فني سريع.', 'assets/images/image_06.webp', true, 'streaming', '1 Year', 3, true),
+    ('Shahid VIP', 169.99, 'اشتراك سنوي على حسابك الخاص', 'assets/images/image_06.webp', true, 'streaming', '1 Year', 3, true),
     ('YouTube Premium', 119, 'اشتراك سنوي — مشاهدة بدون إعلانات، تشغيل في الخلفية، تحميل للمشاهدة بدون إنترنت، يشمل يوتيوب ميوزيك بريميوم، يعمل على جميع الأجهزة.', 'assets/images/image_07.webp', true, 'streaming', '1 Year', 4, false),
-    ('Disney+', 39, 'اشتراك شهري — جودة تصل إلى 4K UHD، دعم HDR و Dolby Vision، يعمل على جميع الأجهزة، إمكانية إنشاء عدة بروفايلات، مكتبة ديزني ومارول وستار وورز الكاملة.', 'assets/images/image_08.webp', true, 'streaming', '1 Month', 5, true),
-    ('FASEL+', 29, 'اشتراك شهري — أحدث الأفلام والمسلسلات أولاً بأول، جودة عالية بدون تقطيع، يعمل على جميع الأجهزة، تحديث مستمر للمكتبة.', 'assets/images/image_09.webp', true, 'streaming', '1 Month', 6, false),
-    ('OSN+', 45, 'اشتراك شهري — كامل محتوى OSN+ من أفلام ومسلسلات عربية وعالمية حصرية، جودة عالية، يعمل على جميع الأجهزة.', 'assets/images/image_10.webp', true, 'streaming', '1 Month', 7, false),
-    ('Shasha', 25, 'اشتراك شهري — أفلام ومسلسلات عربية مختارة، يعمل على جميع الأجهزة، تجربة مشاهدة سلسة وسهلة.', 'assets/images/image_11.webp', true, 'streaming', '1 Month', 8, false),
+    ('Disney+', 9.99, 'اشتراك شهري — جودة تصل إلى 4K UHD، دعم HDR و Dolby Vision، يعمل على جميع الأجهزة، إمكانية إنشاء عدة بروفايلات، مكتبة ديزني ومارول وستار وورز الكاملة.', 'assets/images/image_08.webp', true, 'streaming', '1 Month', 5, true),
+    ('FASEL+', 19.99, 'اشتراك شهري — أحدث الأفلام والمسلسلات أولاً بأول، جودة عالية بدون تقطيع، يعمل على جميع الأجهزة، تحديث مستمر للمكتبة.', 'assets/images/image_09.webp', true, 'streaming', '1 Month', 6, false),
+    ('OSN+', 39, 'اشتراك كامل الحساب — كامل محتوى OSN+ من أفلام ومسلسلات عربية وعالمية حصرية، جودة عالية، يعمل على جميع الأجهزة.', 'assets/images/image_10.webp', true, 'streaming', 'Full Account', 7, false),
+    ('Shasha', 9.99, 'اشتراك شهري — أفلام ومسلسلات عربية مختارة، يعمل على جميع الأجهزة، تجربة مشاهدة سلسة وسهلة.', 'assets/images/image_11.webp', true, 'streaming', '1 Month', 8, false),
     ('Netflix', 39, 'اشتراك شهري — جودة عالية تصل إلى 4K (حسب الباقة)، يعمل على جميع الأجهزة، تحديثات مستمرة للمكتبة، ضمان طوال مدة الاشتراك.', 'assets/images/image_12.webp', true, 'streaming', '1 Month', 9, true),
     ('Prime Video', 9.99, 'حساب خاص لمدة شهر واحد — استمتع بمكتبة برايم فيديو الكاملة من أفلام ومسلسلات حصرية، يعمل على جميع الأجهزة، جودة عالية.', 'assets/images/image_13.webp', true, 'streaming', '1 Month', 10, false)
   on conflict (product_name) do update set
