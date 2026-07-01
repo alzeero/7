@@ -47,7 +47,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <style>:root{--blue-900:#0d1f6e;--blue-800:#1a3bcc;--blue-700:#2347e0;--blue-600:#3358f4;--blue-500:#4a6cf7;--blue-400:#6b8dff;--blue-100:#e8edff;--blue-50:#f0f3ff;--bg:#EEF4FF;--bg-soft:#f0f2f8;--white:#ffffff;--text-900:#0f172a;--text-600:#475569;--text-400:#94a3b8;--border:#e2e8f0;--shadow-sm:0 1px 3px rgba(26,59,204,.08);--shadow-md:0 4px 24px rgba(26,59,204,.12);--shadow-lg:0 16px 48px rgba(26,59,204,.18);--shadow-xl:0 32px 80px rgba(26,59,204,.22);--radius-sm:10px;--radius-md:16px;--radius-lg:24px;--radius-xl:32px;--transition:.3s cubic-bezier(.4,0,.2,1);--font-ar:'Cairo','IBM Plex Sans Arabic',sans-serif;--font-en:'Inter',sans-serif}[data-theme="dark"]{--bg:#0a0f1e;--bg-soft:#111827;--white:#1e293b;--text-900:#f1f5f9;--text-600:#94a3b8;--text-400:#64748b;--border:#1e293b;--shadow-sm:0 1px 3px rgba(0,0,0,.4);--shadow-md:0 4px 24px rgba(0,0,0,.5);--shadow-lg:0 16px 48px rgba(0,0,0,.6);--shadow-xl:0 32px 80px rgba(0,0,0,.7)}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body,#navbar,footer,.checkout-card{transition:background-color var(--transition),background var(--transition),color var(--transition),border-color var(--transition),box-shadow var(--transition)}body{font-family:var(--font-ar);background:var(--bg);color:var(--text-900);transition:background var(--transition),color var(--transition);overflow-x:hidden;line-height:1.7}body.en{font-family:var(--font-en)}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}button{cursor:pointer;border:none;background:none;font-family:inherit}#progress-bar{position:fixed;top:0;right:0;height:3px;width:0%;background:linear-gradient(90deg,var(--blue-600),var(--blue-400));z-index:9999;border-radius:2px;transition:width .1s linear}#navbar{position:fixed;top:0;width:100%;z-index:1000;background:#ffffff;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all var(--transition)}[data-theme="dark"] #navbar{background:rgba(10,15,30,.85)}#navbar.scrolled{box-shadow:var(--shadow-md)}.nav-inner{max-width:1320px;margin:0 auto;padding:0 24px;height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}.nav-logo img{height:60px;width:auto;object-fit:contain;transition:transform var(--transition)}.nav-logo img:hover{transform:scale(1.04)}.nav-actions{display:flex;align-items:center;gap:10px}.btn-lang{font-size:.85rem;font-weight:600;color:var(--blue-700);border:1.5px solid var(--blue-200,#c7d3ff);padding:7px 16px;border-radius:99px;min-width:44px;text-align:center;transition:all var(--transition)}.btn-lang:hover{background:var(--blue-700);color:#fff}[data-theme="dark"] .btn-lang{color:#ffffff}.btn-dark{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-soft);color:var(--text-600);font-size:1rem;transition:all var(--transition)}.btn-dark:hover{background:var(--blue-700);color:#fff}.subpage-header-close{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-soft);color:var(--text-600);font-size:1.05rem;transition:all var(--transition)}.subpage-header-close:hover{background:var(--blue-700);color:#fff;transform:scale(1.08)}.checkout-page{padding:120px 24px 90px;max-width:1100px;margin:0 auto}.checkout-header{text-align:center;margin-bottom:40px}.checkout-header h1{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;margin-bottom:8px}.checkout-header p{color:var(--text-600)}.checkout-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}.checkout-card{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--border);padding:28px;box-shadow:var(--shadow-sm)}.checkout-card h2{font-size:1.1rem;font-weight:800;margin-bottom:18px;display:flex;align-items:center;gap:8px}.checkout-card h2 i{color:var(--blue-700)}.form-group{margin-bottom:18px}.form-group label{display:block;font-size:.88rem;font-weight:700;margin-bottom:6px;color:var(--text-600)}.form-group label .req{color:#dc2626}.form-group input,.form-group textarea{width:100%;padding:12px 14px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:.95rem;font-family:inherit;color:var(--text-900);transition:all var(--transition);outline:none}.form-group input:focus,.form-group textarea:focus{border-color:var(--blue-500);box-shadow:0 0 0 3px rgba(74,108,247,.15)}.form-group textarea{resize:vertical;min-height:80px}.form-error{color:#dc2626;font-size:.8rem;margin-top:4px;display:none}.form-group.invalid input,.form-group.invalid textarea{border-color:#dc2626}.form-group.invalid .form-error{display:block}.payment-methods{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}.payment-option{border:1.5px solid var(--border);border-radius:var(--radius-md);padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:all var(--transition);text-align:center;background:var(--bg)}.payment-option input{position:absolute;opacity:0;pointer-events:none}.payment-option .pm-icon{font-size:1.6rem;color:var(--blue-700)}.payment-option .pm-label{font-size:.85rem;font-weight:700}.payment-option:hover{border-color:var(--blue-400)}.payment-option.selected{border-color:var(--blue-700);background:linear-gradient(135deg,var(--blue-50),var(--blue-100));box-shadow:0 4px 16px rgba(26,59,204,.15)}[data-theme="dark"] .payment-option.selected{background:rgba(74,108,247,.12)}.cart-summary-item{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:.9rem}.cart-summary-item:last-child{border-bottom:none}.cart-summary-name{font-weight:700}.cart-summary-qty{color:var(--text-400);font-size:.82rem}.cart-summary-total-row{display:flex;justify-content:space-between;align-items:center;padding-top:16px;margin-top:8px;border-top:2px solid var(--border);font-size:1.15rem;font-weight:800}.cart-summary-total-row span:last-child{color:var(--blue-700)}.checkout-empty{text-align:center;padding:60px 24px;color:var(--text-400)}.checkout-empty i{font-size:3rem;margin-bottom:16px;display:block}.btn-submit-order{width:100%;justify-content:center;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--blue-700) 0%,var(--blue-500) 100%);color:#fff;padding:16px;border-radius:var(--radius-md);font-size:1.05rem;font-weight:700;box-shadow:0 8px 32px rgba(26,59,204,.35);transition:all var(--transition);margin-top:8px}.btn-submit-order:hover{transform:translateY(-2px)}.btn-submit-order:disabled{opacity:.6;pointer-events:none}.btn-submit-order .fa-spinner{display:none}.btn-submit-order.loading .fa-spinner{display:inline-block}.btn-submit-order.loading .fa-paper-plane{display:none}@media(max-width:860px){.checkout-grid{grid-template-columns:1fr}}@media(max-width:480px){.payment-methods{grid-template-columns:1fr 1fr}.checkout-page{padding:110px 16px 60px}}.payment-methods{grid-template-columns:repeat(3,1fr)}.payment-option[data-disabled="true"]{opacity:.55;position:relative}.payment-option[data-disabled="true"]:hover{border-color:var(--border)}.payment-details-panel{margin-top:14px;padding:16px;border-radius:var(--radius-md);background:var(--bg);border:1.5px solid var(--border)}.pd-row{padding:8px 0;border-bottom:1px dashed var(--border)}.pd-row:last-child{border-bottom:none}.pd-label{display:block;font-size:.78rem;color:var(--text-400);margin-bottom:4px;font-weight:700}.pd-value-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.pd-value{font-weight:700;font-size:.92rem;word-break:break-all}.btn-copy-field{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--blue-700);font-size:.8rem;transition:all var(--transition)}.btn-copy-field:hover{background:var(--blue-700);color:#fff}.btn-copy-field.copied{background:#22c55e;border-color:#22c55e;color:#fff}#payment-soon-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:9500;display:none;align-items:center;justify-content:center;padding:20px}#payment-soon-overlay.open{display:flex}#payment-soon-box{background:var(--white);border-radius:var(--radius-lg);max-width:380px;width:100%;padding:32px 26px;text-align:center;box-shadow:0 16px 48px rgba(26,59,204,.18)}.payment-soon-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#d97706);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.6rem;margin:0 auto 18px}#payment-soon-box h2{font-size:1.05rem;font-weight:800;margin-bottom:10px}#payment-soon-box p{font-size:.88rem;color:var(--text-600);margin-bottom:20px;line-height:1.7}@media(max-width:560px){.payment-methods{grid-template-columns:repeat(2,1fr)}}</style>
+  <style>:root{--blue-900:#0d1f6e;--blue-800:#1a3bcc;--blue-700:#2347e0;--blue-600:#3358f4;--blue-500:#4a6cf7;--blue-400:#6b8dff;--blue-100:#e8edff;--blue-50:#f0f3ff;--bg:#EEF4FF;--bg-soft:#f0f2f8;--white:#ffffff;--text-900:#0f172a;--text-600:#475569;--text-400:#94a3b8;--border:#e2e8f0;--shadow-sm:0 1px 3px rgba(26,59,204,.08);--shadow-md:0 4px 24px rgba(26,59,204,.12);--shadow-lg:0 16px 48px rgba(26,59,204,.18);--shadow-xl:0 32px 80px rgba(26,59,204,.22);--radius-sm:10px;--radius-md:16px;--radius-lg:24px;--radius-xl:32px;--transition:.3s cubic-bezier(.4,0,.2,1);--font-ar:'Cairo','IBM Plex Sans Arabic',sans-serif;--font-en:'Inter',sans-serif}[data-theme="dark"]{--bg:#0a0f1e;--bg-soft:#111827;--white:#1e293b;--text-900:#f1f5f9;--text-600:#94a3b8;--text-400:#64748b;--border:#1e293b;--shadow-sm:0 1px 3px rgba(0,0,0,.4);--shadow-md:0 4px 24px rgba(0,0,0,.5);--shadow-lg:0 16px 48px rgba(0,0,0,.6);--shadow-xl:0 32px 80px rgba(0,0,0,.7)}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body,#navbar,footer,.checkout-card{transition:background-color var(--transition),background var(--transition),color var(--transition),border-color var(--transition),box-shadow var(--transition)}body{font-family:var(--font-ar);background:var(--bg);color:var(--text-900);transition:background var(--transition),color var(--transition);overflow-x:hidden;line-height:1.7}body.en{font-family:var(--font-en)}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}button{cursor:pointer;border:none;background:none;font-family:inherit}#progress-bar{position:fixed;top:0;right:0;height:3px;width:0%;background:linear-gradient(90deg,var(--blue-600),var(--blue-400));z-index:9999;border-radius:2px;transition:width .1s linear}#navbar{position:fixed;top:0;width:100%;z-index:1000;background:#ffffff;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all var(--transition)}[data-theme="dark"] #navbar{background:rgba(10,15,30,.85)}#navbar.scrolled{box-shadow:var(--shadow-md)}.nav-inner{max-width:1320px;margin:0 auto;padding:0 24px;height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}.nav-logo img{height:60px;width:auto;object-fit:contain;transition:transform var(--transition)}.nav-logo img:hover{transform:scale(1.04)}.nav-actions{display:flex;align-items:center;gap:10px}.btn-lang{font-size:.85rem;font-weight:600;color:var(--blue-700);border:1.5px solid var(--blue-200,#c7d3ff);padding:7px 16px;border-radius:99px;min-width:44px;text-align:center;transition:all var(--transition)}.btn-lang:hover{background:var(--blue-700);color:#fff}[data-theme="dark"] .btn-lang{color:#ffffff}.btn-dark{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-soft);color:var(--text-600);font-size:1rem;transition:all var(--transition)}.btn-dark:hover{background:var(--blue-700);color:#fff}.subpage-header-close{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-soft);color:var(--text-600);font-size:1.05rem;transition:all var(--transition)}.subpage-header-close:hover{background:var(--blue-700);color:#fff;transform:scale(1.08)}.checkout-page{padding:120px 24px 90px;max-width:1100px;margin:0 auto}.checkout-header{text-align:center;margin-bottom:40px}.checkout-header h1{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;margin-bottom:8px}.checkout-header p{color:var(--text-600)}.checkout-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}.checkout-card{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--border);padding:28px;box-shadow:var(--shadow-sm)}.checkout-card h2{font-size:1.1rem;font-weight:800;margin-bottom:18px;display:flex;align-items:center;gap:8px}.checkout-card h2 i{color:var(--blue-700)}.form-group{margin-bottom:18px}.form-group label{display:block;font-size:.88rem;font-weight:700;margin-bottom:6px;color:var(--text-600)}.form-group label .req{color:#dc2626}.form-group input,.form-group textarea{width:100%;padding:12px 14px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:.95rem;font-family:inherit;color:var(--text-900);transition:all var(--transition);outline:none}.form-group input:focus,.form-group textarea:focus{border-color:var(--blue-500);box-shadow:0 0 0 3px rgba(74,108,247,.15)}.form-group textarea{resize:vertical;min-height:80px}.form-error{color:#dc2626;font-size:.8rem;margin-top:4px;display:none}.form-group.invalid input,.form-group.invalid textarea{border-color:#dc2626}.form-group.invalid .form-error{display:block}.payment-methods{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}.payment-option{border:1.5px solid var(--border);border-radius:var(--radius-md);padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:all var(--transition);text-align:center;background:var(--bg)}.payment-option input{position:absolute;opacity:0;pointer-events:none}.payment-option .pm-icon{font-size:1.6rem;color:var(--blue-700)}.payment-option .pm-label{font-size:.85rem;font-weight:700}.payment-option .pm-sublabel{font-size:.68rem;color:var(--text-400);font-weight:600}.payment-option:hover{border-color:var(--blue-400)}.payment-option.selected{border-color:var(--blue-700);background:linear-gradient(135deg,var(--blue-50),var(--blue-100));box-shadow:0 4px 16px rgba(26,59,204,.15)}[data-theme="dark"] .payment-option.selected{background:rgba(74,108,247,.12)}.cart-summary-item{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:.9rem}.cart-summary-item:last-child{border-bottom:none}.cart-summary-name{font-weight:700}.cart-summary-qty{color:var(--text-400);font-size:.82rem}.cart-summary-total-row{display:flex;justify-content:space-between;align-items:center;padding-top:16px;margin-top:8px;border-top:2px solid var(--border);font-size:1.15rem;font-weight:800}.cart-summary-total-row span:last-child{color:var(--blue-700)}.checkout-empty{text-align:center;padding:60px 24px;color:var(--text-400)}.checkout-empty i{font-size:3rem;margin-bottom:16px;display:block}.btn-submit-order{width:100%;justify-content:center;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--blue-700) 0%,var(--blue-500) 100%);color:#fff;padding:16px;border-radius:var(--radius-md);font-size:1.05rem;font-weight:700;box-shadow:0 8px 32px rgba(26,59,204,.35);transition:all var(--transition);margin-top:8px}.btn-submit-order:hover{transform:translateY(-2px)}.btn-submit-order:disabled{opacity:.6;pointer-events:none}.btn-submit-order .fa-spinner{display:none}.btn-submit-order.loading .fa-spinner{display:inline-block}.btn-submit-order.loading .fa-paper-plane{display:none}@media(max-width:860px){.checkout-grid{grid-template-columns:1fr}}@media(max-width:480px){.payment-methods{grid-template-columns:1fr 1fr}.checkout-page{padding:110px 16px 60px}}.payment-methods{grid-template-columns:repeat(3,1fr)}.payment-option[data-disabled="true"]{opacity:.55;position:relative}.payment-option[data-disabled="true"]:hover{border-color:var(--border)}.payment-details-panel{margin-top:14px;padding:16px;border-radius:var(--radius-md);background:var(--bg);border:1.5px solid var(--border)}.pd-row{padding:8px 0;border-bottom:1px dashed var(--border)}.pd-row:last-child{border-bottom:none}.pd-label{display:block;font-size:.78rem;color:var(--text-400);margin-bottom:4px;font-weight:700}.pd-value-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.pd-value{font-weight:700;font-size:.92rem;word-break:break-all}.btn-copy-field{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--blue-700);font-size:.8rem;transition:all var(--transition)}.btn-copy-field:hover{background:var(--blue-700);color:#fff}.btn-copy-field.copied{background:#22c55e;border-color:#22c55e;color:#fff}#payment-soon-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:9500;display:none;align-items:center;justify-content:center;padding:20px}#payment-soon-overlay.open{display:flex}#payment-soon-box{background:var(--white);border-radius:var(--radius-lg);max-width:380px;width:100%;padding:32px 26px;text-align:center;box-shadow:0 16px 48px rgba(26,59,204,.18)}.payment-soon-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#d97706);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.6rem;margin:0 auto 18px}#payment-soon-box h2{font-size:1.05rem;font-weight:800;margin-bottom:10px}#payment-soon-box p{font-size:.88rem;color:var(--text-600);margin-bottom:20px;line-height:1.7}@media(max-width:560px){.payment-methods{grid-template-columns:repeat(2,1fr)}}</style>
 </head>
 <body>
 
@@ -122,25 +122,11 @@
           <i class="fas fa-bolt pm-icon"></i>
           <span class="pm-label" data-ar="برق" data-en="Barq">برق</span>
         </label>
-        <label class="payment-option" data-method="apple_pay" data-disabled="true">
-          <input type="radio" name="payment_method" value="apple_pay" disabled />
-          <i class="fab fa-apple-pay pm-icon"></i>
-          <span class="pm-label" data-ar="Apple Pay" data-en="Apple Pay">Apple Pay</span>
-        </label>
-        <label class="payment-option" data-method="mada" data-disabled="true">
-          <input type="radio" name="payment_method" value="mada" disabled />
+        <label class="payment-option" data-method="bank_cards" data-disabled="true">
+          <input type="radio" name="payment_method" value="bank_cards" disabled />
           <i class="fas fa-credit-card pm-icon"></i>
-          <span class="pm-label" data-ar="مدى" data-en="Mada">مدى</span>
-        </label>
-        <label class="payment-option" data-method="visa" data-disabled="true">
-          <input type="radio" name="payment_method" value="visa" disabled />
-          <i class="fab fa-cc-visa pm-icon"></i>
-          <span class="pm-label" data-ar="فيزا" data-en="Visa">فيزا</span>
-        </label>
-        <label class="payment-option" data-method="mastercard" data-disabled="true">
-          <input type="radio" name="payment_method" value="mastercard" disabled />
-          <i class="fab fa-cc-mastercard pm-icon"></i>
-          <span class="pm-label" data-ar="ماستركارد" data-en="Mastercard">ماستركارد</span>
+          <span class="pm-label" data-ar="بطاقات بنكية" data-en="Bank Cards">بطاقات بنكية</span>
+          <span class="pm-sublabel" data-ar="مدى · فيزا · ماستركارد" data-en="Mada · Visa · Mastercard">مدى · فيزا · ماستركارد</span>
         </label>
       </div>
 
@@ -186,6 +172,15 @@
       </div>
       <div class="form-error" id="payment-method-error" data-ar="الرجاء اختيار طريقة الدفع" data-en="Please select a payment method">الرجاء اختيار طريقة الدفع</div>
 
+      <div class="form-group" id="group-receipt" style="display:none;">
+        <label for="receipt-upload"><span data-ar="صورة إيصال الدفع" data-en="Payment Receipt Image">صورة إيصال الدفع</span> <span class="req">*</span></label>
+        <input type="file" id="receipt-upload" name="receipt-upload" accept="image/*" />
+        <div class="form-error" id="receipt-error" data-ar="الرجاء رفع صورة إيصال الدفع" data-en="Please upload the payment receipt image">الرجاء رفع صورة إيصال الدفع</div>
+        <div id="receipt-preview" style="display:none;margin-top:10px;">
+          <img id="receipt-preview-img" alt="Receipt preview" style="max-width:160px;max-height:160px;border-radius:10px;border:1.5px solid var(--border);object-fit:cover;" />
+        </div>
+      </div>
+
       <button type="submit" class="btn-submit-order" id="submit-order-btn">
         <i class="fas fa-paper-plane"></i>
         <i class="fas fa-spinner fa-spin"></i>
@@ -207,8 +202,8 @@
 <div id="payment-soon-overlay" role="dialog" aria-modal="true" aria-labelledby="payment-soon-title">
   <div id="payment-soon-box">
     <div class="payment-soon-icon"><i class="fas fa-clock"></i></div>
-    <h2 id="payment-soon-title" data-ar="هذه الوسيلة غير متاحة حالياً" data-en="This method is currently unavailable">هذه الوسيلة غير متاحة حالياً</h2>
-    <p data-ar="هذه الوسيلة متوقفة حالياً، وسيتم تفعيلها قريباً. يرجى اختيار التحويل البنكي أو برق لإكمال الطلب." data-en="This payment method is currently disabled and will be enabled soon. Please choose Bank Transfer or Barq to complete your order.">هذه الوسيلة متوقفة حالياً، وسيتم تفعيلها قريباً. يرجى اختيار التحويل البنكي أو برق لإكمال الطلب.</p>
+    <h2 id="payment-soon-title" data-ar="هذه الوسيلة غير متوفرة حالياً" data-en="This method is currently unavailable">هذه الوسيلة غير متوفرة حالياً</h2>
+    <p data-ar="هذه الوسيلة غير متوفرة حالياً وسيتم تفعيلها قريباً. يرجى اختيار التحويل البنكي أو برق لإكمال الطلب." data-en="This payment method is currently unavailable and will be activated soon. Please choose Bank Transfer or Barq to complete your order.">هذه الوسيلة غير متوفرة حالياً وسيتم تفعيلها قريباً. يرجى اختيار التحويل البنكي أو برق لإكمال الطلب.</p>
     <button type="button" class="btn-submit-order" id="payment-soon-close" style="max-width:220px;margin:0 auto;" data-ar="حسناً" data-en="OK">حسناً</button>
   </div>
 </div>
@@ -303,7 +298,8 @@ document.getElementById('checkout-total-amount').textContent =
 /* ------------------------------------------------------------
 PAYMENT METHOD SELECTION
 ------------------------------------------------------------ */
-const DISABLED_PAYMENT_METHODS = ['apple_pay', 'mada', 'visa', 'mastercard'];
+const DISABLED_PAYMENT_METHODS = ['bank_cards'];
+const RECEIPT_REQUIRED_METHODS = ['bank_transfer', 'barq'];
 function openPaymentSoonModal() {
 document.getElementById('payment-soon-overlay').classList.add('open');
 }
@@ -317,6 +313,15 @@ if (e.target === e.currentTarget) closePaymentSoonModal();
 function updatePaymentDetailPanels(method) {
 document.getElementById('bank-transfer-panel').style.display = method === 'bank_transfer' ? 'block' : 'none';
 document.getElementById('barq-panel').style.display = method === 'barq' ? 'block' : 'none';
+const receiptGroup = document.getElementById('group-receipt');
+if (RECEIPT_REQUIRED_METHODS.includes(method)) {
+receiptGroup.style.display = 'block';
+} else {
+receiptGroup.style.display = 'none';
+receiptGroup.classList.remove('invalid');
+document.getElementById('receipt-upload').value = '';
+document.getElementById('receipt-preview').style.display = 'none';
+}
 }
 document.querySelectorAll('.payment-option').forEach(opt => {
 opt.addEventListener('click', (e) => {
@@ -350,6 +355,24 @@ icon.className = 'fas fa-copy';
 showCopyFallback(text);
 });
 });
+});
+document.getElementById('receipt-upload').addEventListener('change', (e) => {
+const file = e.target.files[0];
+const previewWrap = document.getElementById('receipt-preview');
+const previewImg = document.getElementById('receipt-preview-img');
+const receiptGroup = document.getElementById('group-receipt');
+if (file) {
+receiptGroup.classList.remove('invalid');
+const reader = new FileReader();
+reader.onload = (ev) => {
+previewImg.src = ev.target.result;
+previewWrap.style.display = 'block';
+};
+reader.readAsDataURL(file);
+} else {
+previewWrap.style.display = 'none';
+previewImg.src = '';
+}
 });
 function showCopyFallback(text) {
 const ta = document.createElement('textarea');
@@ -392,7 +415,16 @@ const emailValid = validateField('group-email', isValidEmail(emailInput.value.tr
 const paymentErrorEl = document.getElementById('payment-method-error');
 const paymentValid = !!selectedPayment;
 paymentErrorEl.style.display = paymentValid ? 'none' : 'block';
-if (!nameValid || !mobileValid || !emailValid || !paymentValid) return;
+const requiresReceipt = paymentValid && RECEIPT_REQUIRED_METHODS.includes(selectedPayment.value);
+const receiptInput = document.getElementById('receipt-upload');
+const receiptFile = receiptInput.files[0];
+const receiptGroup = document.getElementById('group-receipt');
+const receiptValid = !requiresReceipt || !!receiptFile;
+receiptGroup.classList.toggle('invalid', !receiptValid);
+if (!nameValid || !mobileValid || !emailValid || !paymentValid || !receiptValid) {
+showToast(currentLang === 'ar' ? 'يرجى إكمال البيانات' : 'Please complete all required fields', 2800, 'error');
+return;
+}
 const submitBtn = document.getElementById('submit-order-btn');
 submitBtn.classList.add('loading');
 submitBtn.disabled = true;
@@ -403,6 +435,21 @@ price: item.price,
 qty: item.qty,
 subtotal: Math.round(item.price * item.qty * 100) / 100
 }));
+let receiptUrl = null;
+let orderNumberForUpload = null;
+if (requiresReceipt) {
+orderNumberForUpload = generateOrderNumber();
+const uploadResult = await uploadReceipt(receiptFile, orderNumberForUpload);
+if (!uploadResult.success) {
+submitBtn.classList.remove('loading');
+submitBtn.disabled = false;
+alert(currentLang === 'ar'
+? 'تعذر رفع صورة الإيصال. الرجاء المحاولة مرة أخرى.'
+: 'Failed to upload the receipt image. Please try again.');
+return;
+}
+receiptUrl = uploadResult.url;
+}
 const result = await createOrder({
 customerName: nameInput.value.trim(),
 mobileNumber: mobileInput.value.trim(),
@@ -410,7 +457,9 @@ email: emailInput.value.trim(),
 notes: notesInput.value.trim(),
 items: items,
 totalPrice: Math.round(cartTotal() * 100) / 100,
-paymentMethod: selectedPayment.value
+paymentMethod: selectedPayment.value,
+receiptUrl: receiptUrl,
+orderNumber: orderNumberForUpload
 });
 submitBtn.classList.remove('loading');
 submitBtn.disabled = false;

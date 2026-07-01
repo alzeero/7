@@ -14,18 +14,25 @@ and code so that no other file needs to change afterward.
 
 ## How payment method selection currently works
 
-In `checkout.html`, the customer picks one of six options:
+In `checkout.html`, the customer picks one of three options:
 
 ```html
 <input type="radio" name="payment_method" value="bank_transfer" />
 <input type="radio" name="payment_method" value="barq" />
-<input type="radio" name="payment_method" value="apple_pay" />   <!-- currently disabled -->
-<input type="radio" name="payment_method" value="mada" />        <!-- currently disabled -->
-<input type="radio" name="payment_method" value="visa" />        <!-- currently disabled -->
-<input type="radio" name="payment_method" value="mastercard" />  <!-- currently disabled -->
+<input type="radio" name="payment_method" value="bank_cards" />  <!-- currently disabled -->
 ```
 
-The four disabled options have a native `disabled` attribute on their `<input>` and show a "currently unavailable" popup when clicked — they cannot be selected or submitted until you remove `disabled` and wire up a gateway below.
+`bank_cards` represents Mada, Visa, and Mastercard combined into a single
+option (there is no separate `mada` / `visa` / `mastercard` value anymore).
+It has a native `disabled` attribute on its `<input>` and shows a
+"currently unavailable" popup when clicked — it cannot be selected or
+submitted until you remove `disabled` and wire up a gateway below.
+
+Bank Transfer and Barq both require the customer to upload a payment
+receipt image before the order can be submitted. The file is uploaded to
+the public `receipts` Storage bucket (see `supabase/migration.sql`) and
+its public URL is saved on the order as `receipt_url`, visible in
+`admin.html`.
 
 Whichever value is selected gets saved as `payment_method` in the `orders`
 table. The order is created **immediately** on submit — no payment has
@@ -82,7 +89,7 @@ requires a server-to-server call with your certificate). This project has
 no backend server component yet — you'll need a small server function
 (e.g. a Supabase Edge Function) to handle that one step.
 
-### 2. Mada / Visa / Mastercard (now three separate options: `mada`, `visa`, `mastercard`)
+### 2. Bank Cards (Mada / Visa / Mastercard — single `bank_cards` option)
 
 Most Saudi payment processors (Moyasar, HyperPay, PayTabs, Tap) provide a
 JS SDK that renders a secure card form and returns a token. Typical

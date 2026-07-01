@@ -104,10 +104,7 @@
 const PAYMENT_LABELS = {
 bank_transfer: 'حوالة بنكية',
 barq: 'برق',
-apple_pay: 'Apple Pay',
-mada: 'مدى',
-visa: 'فيزا',
-mastercard: 'ماستركارد'
+bank_cards: 'بطاقات بنكية (مدى/فيزا/ماستركارد)'
 };
 const STATUS_LABELS = {
 pending: 'قيد الانتظار',
@@ -246,6 +243,7 @@ body.innerHTML = `
 <div class="detail-row"><span class="k">طريقة الدفع</span><span class="v">${PAYMENT_LABELS[order.payment_method] || escapeHtml(order.payment_method)}</span></div>
 <div class="detail-row"><span class="k">التاريخ</span><span class="v">${formatDate(order.created_at)}</span></div>
 <div class="detail-row"><span class="k">الإجمالي</span><span class="v">${Number(order.total_price).toFixed(2)} ر.س</span></div>
+${order.receipt_url ? `<div class="detail-row"><span class="k">إيصال الدفع</span><span class="v"><a href="${escapeHtml(order.receipt_url)}" target="_blank" rel="noopener">عرض الإيصال</a></span></div><a href="${escapeHtml(order.receipt_url)}" target="_blank" rel="noopener"><img src="${escapeHtml(order.receipt_url)}" alt="Receipt" style="max-width:220px;border-radius:10px;border:1px solid var(--border,#e2e8f0);margin:8px 0;display:block;" /></a>` : ''}
 <div class="detail-items">
 <div class="detail-row"><span class="k" style="font-weight:700;">المنتجات المطلوبة</span></div>
 ${items.map(i => `<div class="detail-item-row"><span>${escapeHtml(i.product_name)} ×${escapeHtml(i.qty)}</span><span>${Number(i.subtotal || i.price * i.qty).toFixed(2)} ر.س</span></div>`).join('')}
