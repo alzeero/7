@@ -99,7 +99,6 @@ async function uploadReceipt(file, orderNumber) {
 
     if (uploadError) {
       console.error('Supabase uploadReceipt error:', uploadError.message);
-      alert(uploadError.message);
 
 return {
   success: false,
