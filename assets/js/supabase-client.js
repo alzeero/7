@@ -57,13 +57,11 @@ function getSupabaseClient() {
    a graceful empty/error state instead of breaking the page. */
 async function fetchActiveProducts() {
   try {
-    const client = await getSupabaseClient();
     const { data, error } = await client
-      .from('products')
-      .select('id, product_name, price, description, image, active, category, badge, duration, featured, sort_order, created_at')
-      .eq('active', true)
-      .order('sort_order', { ascending: true })
-      .order('created_at', { ascending: true });
+  .from('products')
+  .select('id, product_name, price, description, image, active, category, badge, duration, featured, sort_order, created_at')
+  .order('sort_order', { ascending: true })
+  .order('created_at', { ascending: true });
 
     if (error) {
       console.error('Supabase fetchActiveProducts error:', error.message);
