@@ -220,14 +220,21 @@ showAdminToast('تعذّر تحديث الحالة: ' + (result.error || 'خطأ
 DELETE ORDER
 ------------------------------------------------------------ */
 async function deleteOrderById(orderId) {
-if (typeof deleteOrder === 'function') {
-return await deleteOrder(orderId);
-}
-if (typeof supabase !== 'undefined' && supabase && supabase.from) {
-const { error } = await supabase.from('orders').delete().eq('id', orderId);
-return { success: !error, error: error ? error.message : null };
-}
-return { success: false, error: 'تعذّر الوصول إلى قاعدة البيانات' };
+  console.log("Deleting order:", orderId);
+
+  const { data, error } = await supabase
+    .from('orders')
+    .delete()
+    .eq('id', orderId)
+    .select();
+
+  console.log("Delete data:", data);
+  console.log("Delete error:", error);
+
+  return {
+    success: !error,
+    error: error?.message || null
+  };
 }
 function renderStats() {
 document.getElementById('stat-total').textContent = allOrders.length;
