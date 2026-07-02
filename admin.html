@@ -220,22 +220,29 @@ showAdminToast('تعذّر تحديث الحالة: ' + (result.error || 'خطأ
 DELETE ORDER
 ------------------------------------------------------------ */
 async function deleteOrderById(orderId) {
-  console.log("Deleting order:", orderId);
+  try {
+    console.log("Deleting order:", orderId);
 
-  const { data, error } = await supabase
-    .from('orders')
-    .delete()
-    .eq('id', orderId)
-    .select();
+    const { data, error } = await supabase
+      .from('orders')
+      .delete()
+      .eq('id', orderId)
+      .select();
 
-  console.log("Delete data:", data);
-  console.log("Delete error:", error);
+    alert("Error: " + JSON.stringify(error));
+    alert("Data: " + JSON.stringify(data));
 
-  return {
-    success: !error,
-    error: error?.message || null
-  };
-}
+    return {
+      success: !error,
+      error: error?.message || null
+    };
+  } catch (e) {
+    alert("EXCEPTION: " + e.message);
+    return {
+      success: false,
+      error: e.message
+    };
+  }
 function renderStats() {
 document.getElementById('stat-total').textContent = allOrders.length;
 document.getElementById('stat-pending').textContent = allOrders.filter(o => o.status === 'pending').length;
