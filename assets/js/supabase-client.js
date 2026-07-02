@@ -57,11 +57,9 @@ function getSupabaseClient() {
    a graceful empty/error state instead of breaking the page. */
 async function fetchActiveProducts() {
   try {
-    const client = await getSupabaseClient();
     const { data, error } = await client
   .from('products')
   .select('id, product_name, price, description, image, active, category, badge, duration, featured, sort_order, created_at')
-  .eq('active', true)
   .order('sort_order', { ascending: true })
   .order('created_at', { ascending: true });
 
@@ -101,7 +99,12 @@ async function uploadReceipt(file, orderNumber) {
 
     if (uploadError) {
       console.error('Supabase uploadReceipt error:', uploadError.message);
-      return { success: false, error: uploadError.message };
+      alert(uploadError.message);
+
+return {
+  success: false,
+  error: uploadError.message
+};
     }
 
     const { data } = client.storage.from(RECEIPTS_BUCKET).getPublicUrl(path);
