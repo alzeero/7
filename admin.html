@@ -221,29 +221,27 @@ DELETE ORDER
 ------------------------------------------------------------ */
 async function deleteOrderById(orderId) {
   try {
-    console.log("Deleting order:", orderId);
+    const client = await getSupabaseClient();
 
-    const { data, error } = await supabase
+    const { data, error } = await client
       .from('orders')
       .delete()
       .eq('id', orderId)
       .select();
 
-    alert("Error: " + JSON.stringify(error));
-    alert("Data: " + JSON.stringify(data));
+    if (error) {
+      console.error('Supabase deleteOrderById error:', error.message);
+      return { success: false, error: error.message };
+    }
 
-    return {
-      success: !error,
-      error: error?.message || null
-    };
+    allOrders = allOrders.filter(o => String(o.id) !== String(orderId));
+
+    return { success: true, data };
   } catch (e) {
-    alert("EXCEPTION: " + e.message);
-    return {
-      success: false,
-      error: e.message
-    };
+    console.error('Supabase deleteOrderById exception:', e);
+    return { success: false, error: e.message };
   }
-  }
+}
 function renderStats() {
 document.getElementById('stat-total').textContent = allOrders.length;
 document.getElementById('stat-pending').textContent = allOrders.filter(o => o.status === 'pending').length;
