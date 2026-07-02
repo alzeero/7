@@ -174,6 +174,15 @@ renderOrdersTable();
 /* ------------------------------------------------------------
 TOAST NOTIFICATIONS
 ------------------------------------------------------------ */
+function formatSaudiWhatsappNumber(raw) {
+let digits = String(raw || '').replace(/[^0-9]/g, '');
+digits = digits.replace(/^0+/, '');
+if (!digits) return '';
+if (!digits.startsWith('966')) {
+digits = '966' + digits;
+}
+return digits;
+}
 let adminToastTimeout;
 function showAdminToast(message, type) {
 let toast = document.getElementById('admin-toast');
@@ -244,7 +253,9 @@ return true;
 function formatDate(iso) {
 try {
 const d = new Date(iso);
-return d.toLocaleString('ar-SA', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+const parts = new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-latn', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(d);
+const get = (type) => parts.find(p => p.type === type)?.value || '';
+return `${get('day')}/${get('month')}/${get('year')} ${get('hour')}:${get('minute')}`;
 } catch {
 return iso;
 }
@@ -312,9 +323,9 @@ ${Object.entries(STATUS_LABELS).map(([val, label]) =>
 </div>
 `;
 document.getElementById('modal-whatsapp-btn').addEventListener('click', () => {
-const digits = String(order.mobile_number || '').replace(/[^0-9]/g, '');
-if (!digits) { showAdminToast('رقم الجوال غير متوفر', 'error'); return; }
-window.open('https://wa.me/' + digits, '_blank', 'noopener');
+const formatted = formatSaudiWhatsappNumber(order.mobile_number);
+if (!formatted) { showAdminToast('رقم الجوال غير متوفر', 'error'); return; }
+window.open('https://wa.me/' + formatted, '_blank', 'noopener');
 });
 document.getElementById('modal-copy-phone-btn').addEventListener('click', async () => {
 try {
