@@ -6,7 +6,7 @@
    (e.g. username.github.io/repo-name/).
 ============================================================ */
 
-const CACHE_NAME     = 'sevenstore-v3';
+const CACHE_NAME     = 'sevenstore-v4';
 const RUNTIME_CACHE  = 'sevenstore-runtime-v3';
 
 /* Resolve precache URLs relative to this service worker's own location,
