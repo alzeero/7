@@ -243,6 +243,7 @@ async function deleteOrderById(orderId) {
       error: e.message
     };
   }
+  }
 function renderStats() {
 document.getElementById('stat-total').textContent = allOrders.length;
 document.getElementById('stat-pending').textContent = allOrders.filter(o => o.status === 'pending').length;
