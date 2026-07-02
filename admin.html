@@ -113,6 +113,22 @@ completed: 'مكتمل',
 cancelled: 'ملغي'
 };
 let allOrders = [];
+/* Wrap a Supabase call with a hard timeout so a stalled network
+   request can never leave the UI stuck on "جاري التحميل..." forever. */
+function withTimeout(promise, ms) {
+return new Promise((resolve, reject) => {
+const timer = setTimeout(() => reject(new Error('انتهت مهلة الاتصال بقاعدة البيانات، حاول مرة أخرى')), ms);
+Promise.resolve(promise).then(
+(val) => { clearTimeout(timer); resolve(val); },
+(err) => { clearTimeout(timer); reject(err); }
+);
+});
+}
+/* Increments on every loadOrders() call so a slower/older request
+   can never overwrite the table with stale data once a newer
+   request has already started (fixes the "orders disappear /
+   stuck loading" race). */
+let ordersRequestSeq = 0;
 /* ------------------------------------------------------------
 AUTH GATE
 ------------------------------------------------------------ */
@@ -157,9 +173,17 @@ loadOrders();
 ORDERS LOADING / RENDERING
 ------------------------------------------------------------ */
 async function loadOrders() {
+const requestId = ++ordersRequestSeq;
 const tbody = document.getElementById('orders-tbody');
 tbody.innerHTML = '<tr class="empty-row"><td colspan="8"><i class="fas fa-spinner fa-spin"></i> جاري التحميل...</td></tr>';
-const result = await fetchAllOrders();
+let result;
+try {
+result = await withTimeout(fetchAllOrders(), 15000);
+} catch (err) {
+result = { success: false, error: err.message || 'تعذّر الاتصال بقاعدة البيانات' };
+}
+// A newer loadOrders() call started while this one was in flight — drop this stale result.
+if (requestId !== ordersRequestSeq) return;
 if (!result.success) {
 tbody.innerHTML = `<tr class="empty-row"><td colspan="8">
 تعذّر تحميل الطلبات. تأكد من تسجيل الدخول وأن صلاحيات RLS مفعّلة بشكل صحيح.<br>
@@ -223,11 +247,10 @@ async function deleteOrderById(orderId) {
   try {
     const client = await getSupabaseClient();
 
-    const { data, error } = await client
-      .from('orders')
-      .delete()
-      .eq('id', orderId)
-      .select();
+    const { data, error } = await withTimeout(
+      client.from('orders').delete().eq('id', orderId).select(),
+      15000
+    );
 
     if (error) {
       console.error('Supabase deleteOrderById error:', error.message);
@@ -356,6 +379,8 @@ const result = await deleteOrderById(order.id);
 delBtn.disabled = false;
 if (result.success) {
 document.getElementById('order-modal-overlay').classList.remove('open');
+renderStats();
+renderOrdersTable();
 showAdminToast('تم حذف الطلب بنجاح', 'success');
 loadOrders();
 } else {
